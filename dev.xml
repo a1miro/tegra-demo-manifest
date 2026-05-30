@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 	<!-- Remotes -->
-	<remote name="yocto" fetch="https://git.yoctoproject.org/poky"/>
-	<remote name="oe" fetch="https://git.openembedded.org/meta-openembedded">
 	<remote name="oe4t" fetch="https://github.com/OE4T/meta-tegra.git">
+	<remote name="a1miro" fetch="https://github.com/a1miro/meta-jetson-ai.git"
 
-	<!--Yocto layers -->
-	<project name="poky" remote="yocto" path="repos/poky" revision="scarthgap"/>
-	<project name="meta-virtualization" remote="yocto" path="repos/meta-virtualization" revision="scarthgap"/>
+	<!-- Tegra demo distro -->
+	<project name="tegra-demo-distro" remote="oe4t" path="tegra-demo-distro" revision="scarthgap-l4t-r35.x"/>
 
-	<!-- Openembedded layers  -->
-	<project name="meta-openembedded" remote="oe" path="repos/meta-openembedded" revision="scarthgap"/>
+	<!-- AI layers -->
+	<project name="meta-jetson-ai" remote="a1miro" path="repos/meta-jetson-ai" revision="main">
+	<project/>
 
-	<!-- Nvidia Tegra/Jetson layers -->
-	<project name="meta-tegra" remote="oe4t" path="repos/meta-tegra" revision="scarthgap-l4t-r35.x"/>
-	<project name="meta-tegra-community" remote="oe4t" path="repos/meta-tegra-community" revision="scarthgap-l4t-r35.x"/>
+	<linkfile src="repos/meta-jetson-ai" dest="layers/meta-jetson-ai"/>
+
 </manifest>
 
